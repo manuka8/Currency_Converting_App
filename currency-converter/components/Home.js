@@ -1,7 +1,6 @@
-import React, { Component } from 'react'
-import { StyleSheet,Text, View } from 'react-native'
-import { TextInput} from 'react-native-paper';
-
+import { StyleSheet, View } from 'react-native'
+import { Text,TextInput} from 'react-native-paper';
+import React from 'react'
 export function Home(){
     const [text, setText] = React.useState("");
 
@@ -13,10 +12,13 @@ export function Home(){
                 </View>
                 <View style={styles.inputContainer}>
             <TextInput
-                label="Email"
-                value={text}
+                label="Enter LKR value"
+                value={Number}
+                ode="outlined" 
+                outlineColor="gray" 
+                activeOutlineColor="blue"
                 style={styles.input}
-                
+                onChangeText={(value) => setText(value)}
             />
             </View>
         </View>
@@ -40,10 +42,12 @@ const styles = StyleSheet.create({
     header:{
         color:'green',
         fontSize:25,
+        fontFamily:'sans-serif-light',
+        fontWeight:'bold'
     },
     inputContainer:{
         margin:10,
-        paddingBlockStart:20,
+        paddingBlockStart:50,
         width:'100%',
         height:60,
         padding:0,
@@ -51,7 +55,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         
     },
-    
+    input:{
+        width:'90%',
+    }
     
 })
 
