@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { StyleSheet,Text, View } from 'react-native'
-import { Colors } from 'react-native/Libraries/NewAppScreen'
-import { SafeAreaView } from 'react-native-safe-area-context';
-import { PaperProvider, TextInput,Divider } from 'react-native-paper';
+import { TextInput} from 'react-native-paper';
 
 export function Home(){
     const [text, setText] = React.useState("");
