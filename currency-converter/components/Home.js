@@ -1,6 +1,7 @@
 import { StyleSheet, View } from 'react-native'
-import { Text,TextInput} from 'react-native-paper';
+import { Text,TextInput,Button} from 'react-native-paper';
 import React from 'react'
+
 export function Home(){
     const [text, setText] = React.useState("");
 
@@ -9,17 +10,20 @@ export function Home(){
         <View style={styles.mainContainer}>
             <View>
                 <Text varient="headlineLarge" style={styles.header}>Currency Converter</Text>
-                </View>
-                <View style={styles.inputContainer}>
-            <TextInput
-                label="Enter LKR value"
-                value={Number}
-                ode="outlined" 
-                outlineColor="gray" 
-                activeOutlineColor="blue"
-                style={styles.input}
-                onChangeText={(value) => setText(value)}
-            />
+            </View>
+            <View style={styles.inputContainer}>
+                <TextInput
+                    label="Enter LKR value"
+                    value={Number}
+                    mode="outlined" 
+                    outlineColor="gray" 
+                    activeOutlineColor="blue"
+                    style={styles.input}
+                    onChangeText={(value) => setText(value)}
+                />
+                <Button mode="outlined"  style={styles.button} onPress={() => console.log('Pressed')}>
+                 Calculate
+                </Button>
             </View>
         </View>
         
@@ -35,7 +39,6 @@ const styles = StyleSheet.create({
         alignItems:'center',
         justifyContent:'flex-start',
         width:'100%',
-        height:800,
         borderRadius:20,
         padding:20,
     },
@@ -45,20 +48,21 @@ const styles = StyleSheet.create({
         fontFamily:'sans-serif-light',
         fontWeight:'bold'
     },
-    inputContainer:{
-        margin:10,
-        paddingBlockStart:50,
-        width:'100%',
-        height:60,
-        padding:0,
-        margin:0,
-        alignItems:'center',
-        
+    inputContainer: {
+        marginTop: 10,
+        width: '100%',
+        alignItems: 'center',
+        marginTop:40,
     },
     input:{
         width:'90%',
+    },
+    button:{
+        color:'black',
+        backgroundColor:'white',
+        borderRadius:6,
+        marginTop:30
     }
-    
 })
 
 
