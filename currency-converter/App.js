@@ -1,18 +1,19 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View,ScrollView } from 'react-native';
+import React from 'react'
 import { PaperProvider } from 'react-native-paper';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { SafeAreaProvider,SafeAreaView } from 'react-native-safe-area-context';
 import Home from './components/Home.js';
+import { StyleSheet,View } from 'react-native'
 
 export default function App() {
   return (
     <PaperProvider>
-      <SafeAreaView style={styles.safeArea}>
-        <View style={styles.container}>
-          <Home />
-          <StatusBar style="auto" />
-        </View>
-      </SafeAreaView>
+      <SafeAreaProvider>
+        <SafeAreaView style={styles.safeArea}>
+          <View style={styles.container}>
+            <Home />
+          </View>
+        </SafeAreaView>
+      </SafeAreaProvider>
     </PaperProvider>
   );
 }
